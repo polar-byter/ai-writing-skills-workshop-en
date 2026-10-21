@@ -57,3 +57,19 @@ For an agent loop, show the return route and what the model receives on the next
 Independent starters should prepare previous components, leave the current function unfinished and avoid requiring future work for the current check. Keep file names, data contracts and the launching method aligned between the lesson and TASK.md. Do not overwrite a learner's extracted project.
 
 Close a substage by tracing the implemented path: where the rule originated, where the data entered, who sent the request and who received the result. Ready-made helper code can be explained in an optional note through its input, operations and output.
+
+## A short map at the start of a lesson
+
+A beginner does not keep the whole course in mind. Open each lesson with two or three lines of "Where we are": what we are building, which step this is and how it connects to the previous one, with a one-line diagram if it helps, such as `file -> [reading] -> search -> model`. This replaces retelling the introduction.
+
+## Balance reading and doing
+
+Count how much the reader reads before the first action and how much they do themselves. If several screens of text lead to filling two blanks in an almost finished function, the reader does not feel they did anything. Trim the explanation to what this step needs and move optional material (type hints, an alternative spelling, background) into a short note at the end.
+
+Give the most detail where beginners get stuck most often: installation, choosing an interpreter, the first connection. There, name exact menu items, the expected screen and the error message the reader may see. Keep simple steps short.
+
+## Guess, run, break
+
+Before a run, ask a question the reader can answer: "Guess before running: how many lines will the function return?" After the run, bring them back to their guess. This holds attention better than any argument about usefulness.
+
+After a working result, add a "Try to break it" section: remove one condition, pass an empty value, rename a file. Let the reader see the message that appears and what it means, then restore the code. Warnings about possible mistakes fit better here than in the middle of an explanation.

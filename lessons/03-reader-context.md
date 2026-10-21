@@ -1,31 +1,33 @@
 # Explain the data before the selection rule
 
-The instruction to write clearly can be interpreted in many ways. We will make it observable: a first-time reader should understand the table fields and be able to explain why A-17 is selected.
+> **Where we are.** The skill loads and holds one general rule. Now we spell out what exactly the reader needs explained about the data.
 
-## Open this experiment
+"Write clearly" does not tell the model what kind of explanation our reader needs. We make the requirement concrete on the familiar table: a first-time reader should understand the fields and be able to say why A-17 is selected. Those are the signs we will look for in the edit.
 
-Download [writing-03-reader-context](../downloads/writing-03-reader-context.zip), extract it into its own folder and open that folder in OpenCode. Use a plain text editor for the lesson files. Earlier parts are prepared; the current change is yours to make. Keep previous outputs in their original folders so comparisons remain possible.
+## Open this step
 
-## Perform the experiment
+Download [writing-03-reader-context](../downloads/writing-03-reader-context.zip), extract it into its own folder and open that folder in OpenCode with the same model.
 
-The previous basic rule is prepared in this starter. Open `SKILL.md` under `.opencode/skills/write-clear-english` and add a short paragraph in the marked place.
+## Do the experiment
 
-For its first part, require the explanation to establish the reader's task before naming fields. For the second, require the meaning of `status` and `elapsed_days` to be shown on the current records, preserving both selection conditions. For the third, require a transition before a threshold or data set changes, including what changes and why.
+In this step's `SKILL.md` (under `.opencode/skills/write-clear-english`), the basic rule from last time is ready. Find the marked place and add a short paragraph with three requirements:
 
-Describe the desired understanding, rather than forcing one favorite sentence into every answer. The requirement should still work if a future input uses different row IDs or a different task. Do not add an unsupported claim about efficiency.
+1. Establish the reader's task before naming any field.
+2. Show the meaning of `status` and `elapsed_days` on the actual records, and keep both selection conditions: A-17 is `new`, that is, not yet approved, and `elapsed_days=3` means three days since it was submitted.
+3. Before a threshold or data set changes, say what changes and why: the five-day experiment uses the same rows, and none of them qualifies.
 
-Save, create a new session, select the same model and send `PROMPT.md`. Do not paste your new rule into the current request; we are checking whether it arrives from the changed skill. Confirm loading, then save the answer as a new result.
+Write the requirement, not a favorite sentence. It should still work if a future text has other row IDs or another task; A-17 is only today's example. And no unsupported claim about efficiency.
 
-Read it against the facts. Can you explain the values and both conditions? Is the five-day threshold introduced as a separate experiment? If the editor simply removed the second experiment, check that the prompt asked to retain it before diagnosing a style failure.
+Save, create a new session, choose the same model and send `PROMPT.md` as before. Do not paste your new rule into the request: it has to arrive from the changed skill. Check the loading in the trace and save the answer as a new result.
 
-<img src="../assets/step-03.gif" width="480" alt="Experiment 3: Explain the data before the selection rule">
+Read it against the facts. Can you find an explanation of both fields and of why A-17 is selected? Is the five-day threshold introduced as a separate experiment? If the model dropped the second experiment altogether, note it separately: the facts allow it, but it is not required.
 
-[Static alternative](../assets/step-03.png). These are illustrative values and steps, not a recorded model run.
+<img src="../assets/step-03.gif" width="480" alt="Step 3: add a rule about explaining the data">
 
-## What to record
+[Static version](../assets/step-03.png).
 
-The input and model are unchanged. The reader can reconstruct selection from the actual records, and the threshold does not change silently. Record remaining gaps rather than treating a smooth paragraph as proof of correctness.
+## Before the next step
 
-Use `results/observations.md` to separate the changed instruction, observed loading and actual output. Do not claim a model comparison from file validation alone.
+The model and input are unchanged. A reader can reconstruct the selection from the actual records, and the threshold no longer changes silently. Write down the gaps that remain rather than treating a smooth paragraph as proof that it is correct.
 
-[All lessons](../README.md#lessons).
+Next: [move a useful example into a reference](04-references.md). [All lessons](../README.md#lessons).

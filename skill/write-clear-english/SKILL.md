@@ -12,9 +12,11 @@ Help the intended reader understand the point, follow what happens and take the 
 - For an article or substantial edit, read [reader-first.md](references/reader-first.md): reader interest, argument, transitions and voice.
 - For a practical lesson or setup guide, also read [hands-on-lessons.md](references/hands-on-lessons.md): concrete data, partial implementations and observable checks.
 - For examples of a revision technique, consult [examples.md](references/examples.md). Transfer the technique rather than repeating the same wording everywhere.
+- For an introduction, a "who this is for" section or any place where you explain why the reader needs the material, read [motivation.md](references/motivation.md).
+- Before handing over any text, check it against [natural-voice.md](references/natural-voice.md): it lists the patterns by which readers recognize machine-written prose.
 - For a spelling-only request, preserve meaning, scope and structure unless a correction requires a local adjustment.
 
-Do not load every reference or turn a short answer into a chapter automatically.
+Apart from natural-voice.md, open references when the task needs them rather than all at once, and do not turn a short answer into a chapter.
 
 ## Recover the situation
 
@@ -29,6 +31,10 @@ These are editorial questions, not a questionnaire to print before every draft.
 ## Develop the explanation
 
 Start with a recognizable situation and a concrete reason for the next action. Connect local work with the overall task. Job titles, business language and generic promises of efficiency do not establish a benefit on their own.
+
+A published real case with a link persuades more than an invented story. Without one, present a situation as a supposition ("Suppose...", "Imagine a team that...") and do not claim it happened. The example that opens a piece should run through it: later lessons and the conclusion return to it. Take the example's data from the reader's world.
+
+Build motivation from what matters to the person in their role, not from usefulness in general: depth of competence for an analyst, control for a manager, responsibility for access for an administrator. See [motivation.md](references/motivation.md).
 
 Before polishing a claim, check its basis and how the next sentence follows from it. A transition can explain, illustrate, compare or draw a supported conclusion. Do not invent motives, causes or a mechanism just to make the paragraph flow. A single example does not establish a universal rule.
 
@@ -46,13 +52,21 @@ Identify who acts, what they receive and what happens as a result. Add words suc
 
 Check what each modifier belongs to and which actions are being compared. Preserve distinctions between requesting, being allowed to act and actually acting. Do not describe an action and its purpose as two independent operations.
 
-First-person authorship, a direct address to the reader and light humor can suit a tutorial. Do not invent the author's biography, measurements or experience. Preserve an agreed voice rather than normalizing it without a reason.
+First-person authorship, a direct address to the reader and light humor can suit a tutorial. Do not invent the author's biography, measurements or experience, do not write "as a programmer, I..." on their behalf, and do not rework stories found online into their own. Preserve an agreed voice rather than normalizing it without a reason.
+
+Use the terms readers will meet in articles and discussions: LLM, prompt, context window, tokens, RAG, hallucination, tools, function calling, MCP, agent loop, prompt injection, evals. Explain a term where there is already a concrete action behind it, and do not load one paragraph with several new terms.
+
+The text must not read as machine-written. The most common tells: looking at "people" from outside, treating a program as a person, a disclaimer closing every paragraph, "not X, but Y" in a row, triplets, slogan conclusions, rhetorical questions answered at once, stock words such as "delve" or "seamless". The full list with fixes is in [natural-voice.md](references/natural-voice.md).
 
 Use ordinary keyboard punctuation: straight quotes and apostrophes, hyphens, `->`, `<-` and `...`. Preserve valid Markdown, YAML, JSON and Python. Apply the same care to diagram labels. Do not silently change someone else's quotation; paraphrase when needed.
 
 ## Check the result
 
 Read the passage with its neighboring sections. Are the source, actor, operation, reason and expected outcome clear? Do examples match the files? Does a title describe what follows? Has a useful distinction disappeared during shortening?
+
+Read it again as a beginner who opened it after a break. Is it clear from the first lines where they are and what they are doing? Did they have to read several screens before the first action? Is usefulness argued in several paragraphs in a row? Are there more "you do not need to" lines and warnings about mistakes they have not made than instructions about what to do?
+
+Then read it as an editor hunting for machine-written patterns from [natural-voice.md](references/natural-voice.md). For a first pass, `node scripts/check_style.js article.md` marks common stock phrases and caveats; it does not decide whether a phrase is bad, only where to look.
 
 The optional [browser checker](assets/check-text.html) or `node scripts/check_text.js article.md` detects unusual punctuation. It does not edit files or assess meaning, factual accuracy, coherence or whether a skill was loaded.
 

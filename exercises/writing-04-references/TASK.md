@@ -1,25 +1,27 @@
 # Move a useful example into a reference
 
-A growing collection of examples can make the main instruction hard to navigate. We will move a specific example into a neighboring reference and tell the agent when to read it. This reveals the difference between discovering a folder and loading the resources relevant to a task.
+> **Where we are.** SKILL.md holds two rules. Now we move an example into a separate reference file and check that the agent reads it.
 
-## Open this experiment
+As examples and detailed explanations pile up, the main instruction becomes hard to navigate. It is easier to keep them in a reference file and leave in `SKILL.md` a note saying when to read it. Today we move the threshold-change example and check whether the agent actually received it while doing the task.
 
-Download [writing-04-references](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-04-references.zip), extract it into its own folder and open that folder in OpenCode. Use a plain text editor for the lesson files. Earlier parts are prepared; the current change is yours to make. Keep previous outputs in their original folders so comparisons remain possible.
+## Open this step
 
-## Perform the experiment
+Download [writing-04-references](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-04-references.zip), extract it into its own folder and open that folder in OpenCode with the same model.
 
-Open `.opencode/skills/write-clear-english/references/reader-first.md`. Complete the marked example: explain the original two-day selection, announce a second experiment at five days using the same records, and state the new outcome. Do not introduce new rows or measured benefits.
+## Do the experiment
 
-Then open `SKILL.md`. At the marked location, add a Markdown link to `references/reader-first.md` and say when it should be read: before explaining unfamiliar fields or changing the example. The path is relative to the skill folder. A link names the resource, while the surrounding instruction supplies its purpose.
+Open **.opencode -> skills -> write-clear-english -> references -> reader-first.md**. It has a heading already; complete the marked example. First explain the selection of requests older than two days, then announce a second experiment that checks the same two rows with a five-day threshold, and state its outcome. Keep the rows as they are, so the result depends only on the new condition, and add no measured benefits.
 
-In a new session, send the unchanged `PROMPT.md`. Inspect two separate events: loading the skill body and reading the reference. A neighboring file is not automatically part of the model input. If the reference is not read, check the path and loading condition before adding more prose.
+Now open `SKILL.md` and, at the marked place, add a note to read the reference before explaining unfamiliar fields or changing the example. Write it as a Markdown link: a title in square brackets, such as `Threshold example`, followed straight away by the address `references/reader-first.md` in round brackets. The address is relative to the skill folder. The link names the resource; the surrounding sentence says when it is needed.
 
-Compare the result with the same criteria as the previous lesson. Moving the example to a file need not improve the output by itself. This experiment checks whether guidance can be organized and loaded deliberately.
+Create a new session and send the unchanged `PROMPT.md`. In the trace, look for two separate events: loading the main instruction and reading `references/reader-first.md`. A file sitting next to `SKILL.md` is not automatically part of what the model sees, as the [OpenCode documentation](https://opencode.ai/docs/skills/) explains.
 
-## What to record
+If the reference is not read, check the path and the condition in `SKILL.md`. A phrase like "follow best practices" names neither a resource nor a moment to use it. After fixing it, start a new session.
 
-The skill and reference load are separately observable. The edited answer still explains the original data and announces the second experiment. No improvement is claimed solely because a resource was reorganized.
+Then compare the edit with the criteria from the last lesson. Moving the example into a file does not improve the text by itself; what we want to see here is that the reference was read and its rule still takes part in the work.
 
-Use `results/observations.md` to separate the changed instruction, observed loading and actual output. Do not claim a model comparison from file validation alone.
+## Before the next step
 
-[All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).
+The link in `SKILL.md` leads to an existing file, and the trace shows it being read. The edit keeps both selection conditions, and the threshold change, if it is there, does not appear out of nowhere.
+
+Next: [separate a mechanical check from an editorial judgment](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/lessons/05-checks.md). [All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).

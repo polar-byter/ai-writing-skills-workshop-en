@@ -1,27 +1,27 @@
 # Separate a mechanical check from an editorial judgment
 
-A small script can check a rule more consistently than repeated visual inspection. It can also create false confidence if we ask it a question it cannot answer. We will use a punctuation checker and keep its result separate from the explanation's quality.
+> **Where we are.** The skill has an instruction and a reference. Now we add a program that checks formatting, and look at what it cannot check.
 
-## Open this experiment
+Some rules a program checks more reliably than an eye: ordinary straight quotes and typographic quotes, for example, differ in their character codes. Such a check is useful as long as we do not ask it a question it cannot answer. This step has a small script and a browser page ready; no JavaScript to write.
 
-Download [writing-05-checks](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-05-checks.zip), extract it into its own folder and open that folder in OpenCode. Use a plain text editor for the lesson files. Earlier parts are prepared; the current change is yours to make. Keep previous outputs in their original folders so comparisons remain possible.
+## Open this step
 
-## Perform the experiment
+Download [writing-05-checks](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-05-checks.zip), extract it into its own folder and open that folder in OpenCode with the same model.
 
-This starter prepares the earlier skill rule and reference. Open `check-text.html` at the project root in a browser. Paste your latest edited answer into the text area and click **Check**. The page uses the same `scripts/check_text.js` function as the optional Node.js command.
+## Do the experiment
 
-The checker reports non-ASCII punctuation, symbols and separators with their line, column and Unicode code point. It does not change the file. Ordinary English letters and ordinary keyboard punctuation should not be flagged. A deliberately typographic dash can trigger a finding even in a sentence whose meaning is correct.
+In File Explorer, double-click `check-text.html` in the project folder; it opens in the browser. Paste your latest edited answer into the text area and click **Check**. If you have no answer yet, first run the edit through OpenCode with the same `PROMPT.md`.
 
-Now complete the marked skill paragraph: use ordinary keyboard punctuation, name the optional checker, and explicitly distinguish its result from a factual or editorial review. Link to the supplied browser page. If Node.js is already available, the alternative is `node .opencode/skills/write-clear-english/scripts/check_text.js results/article.md`, after saving a real article at that path. Node installation is not required for the browser route.
+For a quick control experiment, paste a sentence with straight quotes, then the same sentence with curly quotes from any of your old documents. In the first case we expect nothing to be reported; in the second, lines with character codes such as `U+201C`. The program compares character codes and nothing else.
 
-Run the same editing request in a new session and inspect the trace. If the agent executes a script, examine its actual report. If you check the output manually in the browser instead, record that. Do not describe a suggested command as an executed one.
+In the skill folder, find `scripts/check_text.js`: the page you opened uses exactly this script. With Node.js installed, an agent could run it from a terminal, for example `node .opencode/skills/write-clear-english/scripts/check_text.js results/article.md`, but for our experiment the browser is enough. That is how a program for one specific check ends up inside a skill, next to the rules written in words.
 
-After the punctuation report, compare the text with `facts.md` yourself. A perfectly ordinary-character sentence can still invent a benefit or fail to explain a field.
+Now complete the marked paragraph in `SKILL.md`: use ordinary keyboard punctuation, name the checker, and say plainly that it reports characters, does not judge meaning and does not change files. Run the same editing request in a new session. If you checked the text in the browser yourself, paste the report into the chat; the agent should not claim it ran the program on your behalf.
 
-## What to record
+Finally, paste the sentence `Request A-18 is ten days overdue.` into the checker. There is no unusual punctuation in it, so it passes, even though it contradicts our facts. After the program, you still read the meaning yourself.
 
-The checker route and report are recorded. The facts and selection logic are reviewed separately. Neither an empty report nor the agent saying "checked" substitutes for observing what ran.
+## Before the next step
 
-Use `results/observations.md` to separate the changed instruction, observed loading and actual output. Do not claim a model comparison from file validation alone.
+The program reports unusual characters and leaves the file untouched. You also found a factual error it could not see, which shows which part of the work the script does and which part stays with you.
 
-[All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).
+Next: [try the skill on a different explanation](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/lessons/06-transfer.md). [All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).

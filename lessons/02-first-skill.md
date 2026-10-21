@@ -1,31 +1,33 @@
 # Create the first SKILL.md
 
-Repeating a preference in every request is awkward. A skill gives the application a named place to discover reusable guidance. We will add one editorial rule and verify that its content actually reaches the model.
+> **Where we are.** We have a baseline edit without a skill. Now one editorial rule moves from the request into a SKILL.md file, and we check that the agent actually loads it.
 
-## Open this experiment
+Repeating the same preference in every request gets tiresome. A skill gives the application a named place for reusable guidance. We start small: one rule in `SKILL.md`, and a careful look at how the agent finds and loads it. The full ready-made skill can wait; first we follow a single instruction on its way to the model.
 
-Download [writing-02-first-skill](../downloads/writing-02-first-skill.zip), extract it into its own folder and open that folder in OpenCode. Use a plain text editor for the lesson files. Earlier parts are prepared; the current change is yours to make. Keep previous outputs in their original folders so comparisons remain possible.
+## Open this step
 
-## Perform the experiment
+Download [writing-02-first-skill](../downloads/writing-02-first-skill.zip), extract it into its own folder and open that folder in OpenCode with the same model.
 
-In the extracted project, open `.opencode/skills/write-clear-english/SKILL.md`. The folder name and frontmatter `name` already match. Fill the empty `description` with a specific use case, such as editing an explanation of a work task from supplied facts. Then add one rule in the marked place: preserve provided facts and do not claim measured improvement when no measurement was supplied.
+## Do the experiment
 
-Keep the `---` frontmatter delimiters and exact file name. `description` helps the application and model decide when the skill is relevant; the body contains the instructions used after loading. A file being present does not prove that its body has been loaded.
+In File Explorer, open **.opencode -> skills -> write-clear-english -> SKILL.md** in a plain text editor. The file already has the right name and extension.
 
-Save the file, create a new session with the same model and send all of `PROMPT.md`. The only new request is to load `write-clear-english`; the source and facts remain the same. In the activity trace, inspect the `skill` action and verify the selected name and loaded content. According to [OpenCode's skill documentation](https://opencode.ai/docs/skills/), project skills can be loaded through that native tool.
+Between the `---` lines at the top is the YAML header: `name` is the skill's name and `description` says what tasks it is for. The folder name and `name` already match, as [OpenCode's skill documentation](https://opencode.ai/docs/skills/) requires. Fill the empty `description` with a concrete use, for example editing an explanation of a work task for an analyst from supplied facts. Then replace the marked placeholder below the header with one rule in your own words: keep the supplied facts and do not claim a measured improvement when no measurement was supplied. The point is to keep a way of editing, not one lucky answer.
 
-If the agent only reads the file with an ordinary file-reading operation, record that distinction: the text may have reached context, but native skill discovery has not been demonstrated. If it finds nothing, check the project folder, `.opencode/skills` path, exact name, frontmatter and permissions. Try a fresh session after saving.
+Save the file. Create a new session with the same model and send all of `PROMPT.md`. The only new thing in it is the request to load `write-clear-english`; the source and facts are unchanged.
 
-Save the new output separately. Compare it with the baseline; do not require identical wording or claim that loading a rule guarantees compliance.
+In the activity trace, expand the `skill` action and check that the agent loaded `write-clear-english` with your new text. If it only says "I used the skill", loading is not confirmed. If you see an ordinary file read instead of the `skill` action, write that down: the text may have reached the model, but skill discovery itself has not been shown.
 
-<img src="../assets/step-02.gif" width="480" alt="Experiment 2: Create the first SKILL.md">
+If the skill is not found, compare the path, the file name, the header and the folder opened as the project, then start a fresh session after saving. Adding more rules will not fix a discovery problem.
 
-[Static alternative](../assets/step-02.png). These are illustrative values and steps, not a recorded model run.
+Save the new answer separately and compare it with the baseline.
 
-## What to record
+<img src="../assets/step-02.gif" width="480" alt="Step 2: edit SKILL.md and confirm loading in the trace">
 
-The trace shows what was loaded and how. The edited explanation preserves the facts and does not invent measured gains. An unchanged answer is a valid observation if the baseline already met that criterion.
+[Static version](../assets/step-02.png).
 
-Use `results/observations.md` to separate the changed instruction, observed loading and actual output. Do not claim a model comparison from file validation alone.
+## Before the next step
 
-[All lessons](../README.md#lessons).
+The trace shows what was loaded and how, and the edit keeps the facts without inventing measured gains. If the wording barely changed, record that: one rule may simply match what the model already did well.
+
+Next: [explain the data before the selection rule](03-reader-context.md). [All lessons](../README.md#lessons).

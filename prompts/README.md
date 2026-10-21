@@ -1,6 +1,6 @@
 # Prompts for using the ready skill
 
-Use these after checking that your application can load `write-clear-english`. Replace bracketed fields with actual material. A prompt specifies the current task; it does not prove the skill or its references were loaded.
+Use these after checking that your application can load `write-clear-english`. Replace the bracketed fields with your material. Each prompt describes the current task; the recurring editorial method lives in the skill, so it does not need repeating here. Whether the skill and its references were loaded, check in the activity trace.
 
 ## Edit an explanation
 
@@ -59,4 +59,16 @@ Keep observations separate from assumptions. Do not turn one awkward phrase into
 universal ban or claim that a punctuation check establishes editorial quality.
 
 [passage]
+```
+
+## Check a draft for machine-written patterns
+
+```text
+Load write-clear-english and its natural-voice reference.
+Read draft.md and find the places where a reader could tell the text was written by a model.
+For each place, give the passage, the name of the pattern and a revised version.
+If Node.js is available, run scripts/check_style.js and review its hints; do not change a phrase
+just because the script flagged it.
+Do not change the facts and do not invent personal stories for the author.
+Show the list of changes first; do not edit the file yet.
 ```

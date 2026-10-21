@@ -1,27 +1,29 @@
 # Try the skill on a different explanation
 
-Our earlier rule helped with one table example. To see whether it expresses a transferable principle, we need another task with different data and a different possible misconception. We will also check that the skill works in a separate project folder.
+> **Where we are.** The skill is assembled. Now we try it on another text and in a new project.
 
-## Open this experiment
+So far we improved the same text about approval requests. Now we try the skill on an explanation of a different kind and move it into a separate project folder. We want to see whether the instruction helps with a new task, and whether the agent drags the approval requests from the old exercise into the new answer.
 
-Download [writing-06-transfer](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-06-transfer.zip), extract it into its own folder and open that folder in OpenCode. Use a plain text editor for the lesson files. Earlier parts are prepared; the current change is yours to make. Keep previous outputs in their original folders so comparisons remain possible.
+## Open this step
 
-## Perform the experiment
+Download [writing-06-transfer](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-06-transfer.zip), extract it into its own folder and open that folder in OpenCode with the same model.
 
-First repeat the original request using this starter's prepared skill. Record which files were loaded. Then open `transfer-source.md` and `transfer-facts.md`: the new reader is trying to understand a helper's answer from a policy fragment, not select approval records.
+## Do the experiment
 
-Create a fresh session and send `TRANSFER-PROMPT.md`. This prompt supplies its own source and facts. Check whether the explanation identifies the selected document fragment, acknowledges that a skill does not grant file access, and distinguishes a request to acknowledge missing information from guaranteed compliance.
+This starter has `transfer-source.md` and `transfer-facts.md`: now the reader wants to understand an assistant's answer based on a fragment of a policy document. Read both files first. The names, conditions and data are new, but the skill's job is the same: give the reader a clear explanation without invented facts.
 
-The table row IDs should not appear in this new answer. If your rule or reference forces A-17 into every explanation, revise it to require concrete current data rather than that particular example. Repeat the transfer request while changing only that rule and keep both outputs.
+Create a new session, open `TRANSFER-PROMPT.md` and send its text. Check whether the explanation says which document fragment the assistant received, acknowledges that a skill does not grant access to files, and keeps "asked to report missing information" apart from "guaranteed to do so". Check also that A-17 and A-18 from the earlier example do not appear.
 
-For a separate discovery check, copy this starter to a new ordinary project folder and open that folder in OpenCode. Keep the local skill under `.opencode/skills/write-clear-english`, create a fresh session and inspect actual loading there. Do not install the skill globally as a shortcut; the experiment concerns portability of the local folder.
+If the answer about the policy mentions the approval requests again, check `SKILL.md` and the reference: does the instruction tell the model to repeat the earlier example? It should ask for concrete current data, not for that particular example. Change only that rule, repeat the request in a new session with the same model and keep both answers.
 
-Save both actual answers and observations. This small test can expose overfitting and discovery problems, but it does not establish that the skill improves all topics or models. Keep the ready-made final package separate from the version you have built.
+To move the skill, copy **only the write-clear-english folder, whole**, from `.opencode/skills` into the same place in a new project. Check that `references`, `scripts` and `assets` came along if the instruction links to them. Do not copy `results`, `facts.md` or the chat history: they are not part of the skill.
 
-## What to record
+Create a new folder `writing-transfer-check` next to the lesson folder. Inside it create `.opencode`, inside that `skills`, and copy `write-clear-english` there. Copy `transfer-source.md`, `transfer-facts.md` and `TRANSFER-PROMPT.md` to the root of the new folder and create an empty `results` folder. Open `writing-transfer-check` in OpenCode, choose the same model, send `TRANSFER-PROMPT.md`, check the loading in the trace and save the answer as `results/transfer-answer.md`. Do not install the skill globally as a shortcut: this experiment is about moving the local folder.
 
-The new task is explained using its own facts, not the old record IDs. Loading is observed in the new project. The final report distinguishes completed checks, remaining uncertainty and model-dependent output.
+In `results/observations.md`, describe the path of the instruction in your own words: how the agent finds the skill, when it reads the reference and who runs the checker. Note separately what you had to judge by meaning yourself.
 
-Use `results/observations.md` to separate the changed instruction, observed loading and actual output. Do not claim a model comparison from file validation alone.
+## When the workbook is done
 
-[All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).
+The agent loads the skill from the new project and explains the current data without approval requests from the old example. References and scripts stay inside the portable folder, while results and working documents stay outside it.
+
+The workbook is complete. Compare your version with the [ready-made skill](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/skill/write-clear-english/SKILL.md) and save your observations. [All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).

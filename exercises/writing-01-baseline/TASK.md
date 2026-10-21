@@ -1,25 +1,25 @@
 # Record a baseline edit
 
-Before adding a rule, we need a comparison. The draft is deliberately abrupt: it mentions table fields without explaining them and changes an age threshold without a transition. We will ask for an edit with the facts supplied, then inspect what the model improves and what it still leaves unclear.
+> **Where we are.** The application and model work. Now we get an edit without any skill: every later step is compared with it.
 
-## Open this experiment
+Before adding rules, we need something to compare against. The training draft is a short paragraph about selecting approval requests. It names table fields without explaining them, changes an age threshold without a word of transition and promises an efficiency gain nobody measured. We ask a model to edit it and see what it fixes on its own and what stays unclear.
 
-Download [writing-01-baseline](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-01-baseline.zip), extract it into its own folder and open that folder in OpenCode. Use a plain text editor for the lesson files. Earlier parts are prepared; the current change is yours to make. Keep previous outputs in their original folders so comparisons remain possible.
+## Open this step
 
-## Perform the experiment
+Download [writing-01-baseline](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/downloads/writing-01-baseline.zip), extract it into its own folder and open that folder in OpenCode with the same model as before. Your answers from the previous step stay in their own folder.
 
-Open this independent starter as the project and create a new session with the same model used in setup. There is no local skill yet. Open `PROMPT.md`, copy its entire content and send it in the chat. The source and facts are already included in that prompt, so this first experiment does not depend on whether the application reads a separate attachment.
+## Do the experiment
 
-Read the answer against `facts.md` and the two rows in `requests.csv`. We are selecting requests that are not approved and are older than two days. A-17 is new and three days old, so it qualifies. A-18 is approved and one day old, so it does not. The second five-day experiment should be announced and should exclude both rows.
+Open `source.md`, then check it against `facts.md` and the table `requests.csv`. In the table, `status` is the state of a request and `elapsed_days` the number of days since it was submitted. We select requests that are not approved and are older than two days. A-17 is `new` and three days old, so it qualifies. A-18 is `approved` and one day old, so it fails both conditions. A second experiment raises the threshold to five days, and then neither row qualifies.
 
-Save the actual answer as `results/baseline.md`. In `results/observations.md`, note whether both conditions are explained, whether the changed threshold is introduced, and whether the text invents an application button or a measured benefit. Do not edit the saved answer to make the comparison look cleaner.
+Create a new session. Open `PROMPT.md`, copy all of it and send it in the chat; it already contains the source and the facts. No skill is used here. If you have a writing skill installed globally, ask the agent not to load it and check the activity trace to confirm; the application's own standing rules still apply.
 
-A good baseline is a useful result too. It may mean that your prompt and model already handle this example well; it does not prove that a skill is unnecessary on every future task. Keep the same input for the next experiment.
+Save the answer as `results/baseline.md`, exactly as the model wrote it. In `results/observations.md`, note two concrete observations: can a reader tell from the edit why A-17 is selected? Is the five-day threshold introduced, or does it appear out of nowhere? Did the text invent a button, a program or a measured benefit?
 
-## What to record
+If the baseline is already good, write that down too: we need a reference point, not a bad starting text.
 
-The baseline answer and model name are saved. You can identify which claims match the supplied facts and which details, if any, were invented. No skill-loading claim is made at this stage.
+## Before the next step
 
-Use `results/observations.md` to separate the changed instruction, observed loading and actual output. Do not claim a model comparison from file validation alone.
+`results/baseline.md` holds the real edit and `results/observations.md` says which conditions it explains and where questions remain. There is no single correct text here; what matters is that the facts survive and you know what to improve.
 
-[All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).
+Next: [create the first SKILL.md](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/lessons/02-first-skill.md). [All lessons](https://github.com/polar-byter/ai-writing-skills-workshop-en/blob/main/README.md#lessons).
