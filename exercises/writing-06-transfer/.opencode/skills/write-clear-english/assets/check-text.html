@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Check ordinary keyboard punctuation</title>
+<style>body{max-width:760px;margin:32px auto;padding:0 20px;font:17px/1.5 system-ui;color:#21384c}textarea{width:100%;min-height:260px;box-sizing:border-box;font:16px/1.5 monospace}button,input{margin:12px 12px 12px 0}button{padding:8px 20px}#status{font-weight:600}</style></head>
+<body><h1>Check ordinary keyboard punctuation</h1>
+<p>Paste text or open a local file. This page reports unusual punctuation and separators; it does not edit the file or evaluate the explanation.</p>
+<label>Open text file <input id="file" type="file" accept=".md,.txt"></label>
+<label for="text">Text to check</label><textarea id="text"></textarea>
+<button id="check" type="button">Check</button><p id="status" role="status"></p><ul id="results"></ul>
+<script src="../scripts/check_text.js"></script></body></html>

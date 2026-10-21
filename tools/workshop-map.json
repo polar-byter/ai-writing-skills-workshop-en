@@ -1,0 +1,44 @@
+[
+  {
+    "number": 0,
+    "root": "writing-00-setup",
+    "path": "lessons/00-setup.md",
+    "title": "Prepare the workspace"
+  },
+  {
+    "number": 1,
+    "root": "writing-01-baseline",
+    "path": "lessons/01-baseline.md",
+    "title": "Record a baseline edit"
+  },
+  {
+    "number": 2,
+    "root": "writing-02-first-skill",
+    "path": "lessons/02-first-skill.md",
+    "title": "Create the first SKILL.md"
+  },
+  {
+    "number": 3,
+    "root": "writing-03-reader-context",
+    "path": "lessons/03-reader-context.md",
+    "title": "Explain the data before the selection rule"
+  },
+  {
+    "number": 4,
+    "root": "writing-04-references",
+    "path": "lessons/04-references.md",
+    "title": "Move a useful example into a reference"
+  },
+  {
+    "number": 5,
+    "root": "writing-05-checks",
+    "path": "lessons/05-checks.md",
+    "title": "Separate a mechanical check from an editorial judgment"
+  },
+  {
+    "number": 6,
+    "root": "writing-06-transfer",
+    "path": "lessons/06-transfer.md",
+    "title": "Try the skill on a different explanation"
+  }
+]

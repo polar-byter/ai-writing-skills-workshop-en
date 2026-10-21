@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear English Writing"
+  short_description: "Clear articles, lessons and working instructions"
+  default_prompt: "Use $write-clear-english to write a clear explanation for my intended reader using the supplied material."
