@@ -21,3 +21,7 @@ The workbook is for people new to agent skills. You do not need Python: OpenCode
 The starters hold different stages of the skill on purpose, so keep each extracted step in its own folder. Check in the activity trace that the skill and its references were actually loaded; an agent saying it used a skill does not show that.
 
 The ready skill targets clear English explanations and teaches a model to avoid the patterns that make text sound machine-written. It adapts editorial principles from a separate Russian project rather than translating its wording. Free model offerings change over time; the setup lesson links to the current official catalog.
+
+## License
+
+Code is released under the [MIT License](LICENSE). Lesson texts and images are released under [CC BY-NC-SA 4.0](LICENSE-CONTENT.md): you may use and adapt them with credit, for non-commercial purposes, under the same license.
