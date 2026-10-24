@@ -71,3 +71,11 @@ Then read it as an editor hunting for machine-written patterns from [natural-voi
 The optional [browser checker](assets/check-text.html) or `node scripts/check_text.js article.md` detects unusual punctuation. It does not edit files or assess meaning, factual accuracy, coherence or whether a skill was loaded.
 
 Preserve the author's exercise implementations and intentional comments. Do not publish, install a skill globally or contact another service merely because a lesson describes doing so. Report the actual revision and checks separately from unperformed experiments.
+
+## Check the whole publication
+
+When a text goes into a repository, onto a site or into a lesson archive, the reader sees more than that text. Next to it are the README, maintainer notes, change logs, `TASK.md` and other files inside archives, image captions and commit messages. Machine-written phrasing survives there most often, because nobody rereads those texts as the author's own.
+
+Before publishing, run `check_style.js` and `check_text.js` on every text file, not only the main one, and look inside the archives. When you fix a phrase in one place, find its copies: in the task hints, in the archive, in the edition in another language.
+
+Write maintainer texts the way the author would: impersonally ("Four lessons added") or in the first person. Do not refer to the author in the third person ("the owner asked", "the author clarified", "at the author's request"): that is how an assistant reports to a client. Keep instructions for a model or agent (`AGENTS.md`, rules such as "record decisions in the log") with the working notes and out of the publication. Examples are in the section on internal notes in [natural-voice.md](references/natural-voice.md).

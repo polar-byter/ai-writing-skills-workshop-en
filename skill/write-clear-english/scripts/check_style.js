@@ -14,6 +14,8 @@ const PATTERNS = [
   [word('does not (?:guarantee|prove|mean)|is not a (?:guarantee|proof)|not a recorded|results may vary'), 'caveat: is it needed here, or already said once'],
   [word('moreover|furthermore|additionally'), 'connector: check whether the sentences really need it'],
   [word('honest (?:answer|result)|the (?:function|program|model) (?:wants|tries|thinks|believes)'), 'treating the program as a person'],
+  [word("the (?:author|owner) (?:asked|clarified|requested|wanted|approved|rejected|noted)|at the (?:author|owner)'s request|per the (?:author|owner)"), 'maintainer text written by an assistant: write impersonally or in the first person'],
+  [word('from the (?:chat|dialogue|conversation)|(?:in|for) the next session'), 'trace of a conversation with a model'],
   [word('(?:humans|people|users|individuals) (?:usually|typically|tend to|often)'), 'looking at people from outside'],
 ];
 

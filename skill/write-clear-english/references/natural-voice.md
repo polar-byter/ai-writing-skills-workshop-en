@@ -98,6 +98,14 @@ A model sometimes leaves in reader-facing text what was an instruction to itself
 
 The same goes for one action described twice in a row in different words ("Open demo.py and choose Run... Open demo.py and run it"): a trace of stitched fragments.
 
+Published maintainer texts give away their origin even faster than lessons. A work log with entries like "The owner asked for an English edition", "The author clarified the task" or "Simplified at the author's request" reads as an assistant's report to a client. Authors do not write about themselves that way.
+
+Weak: "2026-10-24: simplified the lesson 3 introduction at the author's request."
+
+Better: "2026-10-24: simplified the lesson 3 introduction: the first paragraph did not say why the threshold is needed."
+
+Phrases that only make sense in a conversation with a model give it away too: "so the context does not have to be rebuilt from the chat", "saved for the next session". Files with instructions for agents (`AGENTS.md`, `CLAUDE.md`, editing rules for a model) are not part of the publication: they belong with the working notes.
+
 ## Instructions by prohibition
 
 Weak: "You do not need to add this to notes.py. You do not need to type these assignments. Do not create a second function with the same name."
